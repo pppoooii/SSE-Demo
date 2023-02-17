@@ -12,3 +12,9 @@ stream.on('data', data => {
 stream.on('end', () => {
     console.log("stream done");
 });
+
+// ----------百度知道结果----------
+axios.get('/api/data',
+    { responseType: 'text/event-stream' }).then(res => {
+        // handle data here
+    });
