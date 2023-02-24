@@ -4,6 +4,24 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>SSE Demo</title>
+    <style>
+      .result-streaming > :not(ol):not(ul):not(pre):last-child:after,
+      .result-streaming > ol:last-child li:last-child:after,
+      .result-streaming > pre:last-child code:after,
+      .result-streaming > ul:last-child li:last-child:after {
+        -webkit-animation: blink 1s steps(5, start) infinite;
+        animation: blink 1s steps(5, start) infinite;
+        content: "▋";
+        margin-left: 0.25rem;
+        vertical-align: baseline;
+      }
+
+      @keyframes blink {
+        to {
+          visibility: hidden;
+        }
+      }
+    </style>
   </head>
 
   <body>

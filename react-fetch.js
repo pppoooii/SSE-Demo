@@ -5,8 +5,10 @@ const [data, setData] = useState([]);
       await fetchEventSource(`${serverBaseURL}/sse`, {
         method: "POST",
         headers: {
-          Accept: "text/event-stream",
-        },
+            Accept: "text/event-stream",
+            // 'Content-Type':'application/json'
+          },
+        body:JSON.stringify(obj),
         onopen(res) {
           if (res.ok && res.status === 200) {
             console.log("Connection made ", res);
@@ -51,3 +53,7 @@ const [data, setData] = useState([]);
 };
 
 export default App;
+
+
+
+
